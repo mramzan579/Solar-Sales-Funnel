@@ -1,6 +1,4 @@
 Project Name: Premium Solar Company Lead Generation Platform
 Project Category: Solar & Energy Lead Generation
-Netlify URL: [To be deployed]
+Netlify URL: [ https://solarpanelfunnel.netlify.app/ ]
 GitHub Repository: https://github.com/mramzan579/solar-company-platform.git
-Date Deployed: [Date]
-Version: 1.0.0
