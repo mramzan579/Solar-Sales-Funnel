@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Solar | Intelligent Energy Solutions</title>
+    <meta name="description" content="Generate more savings with our advanced solar technology. Free consultation and intelligent solar assessments for residential and commercial properties.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Premium Solar | Intelligent Energy Solutions">
+    <meta property="og:description" content="Generate more savings with our advanced solar technology. Get your free solar assessment today.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+</head>
+<body>
+
+    <!-- Global Conversion: Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            ☀️ Free Solar Consultation Available | Call Now: +1 (800) 123-4567
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-solar-panel"></i>
+                <div>Premium<span>Solar</span></div>
+            </div>
+            <nav class="nav-links">
+                <a href="#calculators">Savings Calculator</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#commercial">Commercial</a>
+                <a href="#contact" class="btn btn-primary" style="padding: 10px 20px;">Get Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Global Conversion: Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="#whatsapp" class="float-btn float-wa" aria-label="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+18001234567" class="float-btn float-call" aria-label="Call Us"><i class="fas fa-phone-alt"></i></a>
+    </div>
+
+    <!-- Global Conversion: Mobile Bottom Bar -->
+    <div class="mobile-cta-bar">
+        <a href="tel:+18001234567" class="m-btn-call"><i class="fas fa-phone"></i> Call</a>
+        <a href="#whatsapp" class="m-btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="#contact" class="m-btn-free"><i class="fas fa-bolt"></i> Assessment</a>
+    </div>
+
+    <!-- Exit Intent Popup Overlay -->
+    <div class="exit-popup-overlay" id="exitPopup">
+        <div class="exit-popup-content">
+            <span class="close-popup" id="closeExitPopup">&times;</span>
+            <h3>Leaving so soon?</h3>
+            <p>Get a <strong>Free Solar Savings Report</strong> tailored to your property before you go.</p>
+            <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 15px;" id="exitCtaBtn">Get My Free Report</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero section-dark">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge">Intelligent Solar Solutions</div>
+                <h1>Turn Your Roof Into A <span class="highlight">Power Plant</span></h1>
+                <p>Advanced solar systems engineered for maximum ROI. Stop renting electricity and start owning your power with zero upfront cost options.</p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary">Get Free Solar Assessment</a>
+                    <a href="#calculators" class="btn btn-secondary">Calculate Savings</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h4>500+</h4>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>15 MW</h4>
+                        <p>Installed Capacity</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>4.9/5</h4>
+                        <p>Customer Reviews</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>10 Yrs</h4>
+                        <p>Experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Abstract visual representation for hero -->
+                <div class="solar-abstract">
+                    <div class="sun"></div>
+                    <div class="panel-grid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade 10: Solar Readiness Check -->
+    <section class="readiness-check section">
+        <div class="container">
+            <div class="readiness-card shadow-card">
+                <h2>Is Your Property Ready For Solar?</h2>
+                <p>Take our 30-second assessment to find out.</p>
+                <div class="readiness-steps" id="readinessForm">
+                    <div class="step active" id="step1">
+                        <label>Do you own your property?</label>
+                        <div class="options">
+                            <button class="r-btn" onclick="nextStep(2)">Yes</button>
+                            <button class="r-btn" onclick="nextStep(2)">No</button>
+                        </div>
+                    </div>
+                    <div class="step" id="step2" style="display:none;">
+                        <label>What is your average monthly bill?</label>
+                        <div class="options">
+                            <button class="r-btn" onclick="nextStep(3)">Under $100</button>
+                            <button class="r-btn" onclick="nextStep(3)">$100 - $200</button>
+                            <button class="r-btn" onclick="nextStep(3)">Over $200</button>
+                        </div>
+                    </div>
+                    <div class="step" id="step3" style="display:none;">
+                        <label>What type of roof do you have?</label>
+                        <div class="options">
+                            <button class="r-btn" onclick="showReadinessResult()">Asphalt Shingle</button>
+                            <button class="r-btn" onclick="showReadinessResult()">Tile</button>
+                            <button class="r-btn" onclick="showReadinessResult()">Metal</button>
+                            <button class="r-btn" onclick="showReadinessResult()">Flat</button>
+                        </div>
+                    </div>
+                    <div class="step-result" id="stepResult" style="display:none;">
+                        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Great News!</h3>
+                        <p>Your property appears highly suitable for solar installation. You could save thousands.</p>
+                        <a href="#calculators" class="btn btn-primary" style="margin-top: 15px;">Calculate Exact Savings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Interactive Calculators Area -->
+    <section id="calculators" class="calculators-section bg-light section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Intelligent Solar Projections</h2>
+                <p>Discover exactly how much you can save. No guesswork, just data.</p>
+            </div>
+
+            <div class="calculator-grid">
+                <!-- Live Savings Calculator Input -->
+                <div class="calc-input-panel shadow-card">
+                    <h3>Live Savings Calculator</h3>
+                    <div class="form-group">
+                        <label>Property Type</label>
+                        <select id="calcPropType">
+                            <option value="residential">Home</option>
+                            <option value="commercial">Commercial / Office</option>
+                            <option value="industrial">Factory / Warehouse</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Average Monthly Bill ($)</label>
+                        <input type="number" id="calcBill" value="150" min="50" step="10">
+                        <input type="range" id="calcBillSlider" min="50" max="2000" value="150" step="10">
+                    </div>
+                    <div class="form-group">
+                        <label>City / Region</label>
+                        <select id="calcCity">
+                            <option value="1">High Sun Exposure (e.g. Phoenix)</option>
+                            <option value="0.85" selected>Average Sun Exposure (e.g. New York)</option>
+                            <option value="0.7">Lower Sun Exposure (e.g. Seattle)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary w-100" id="btnCalculate">Generate Projection</button>
+                </div>
+
+                <!-- Upgrade 1: Solar Savings Dashboard (Output) -->
+                <div class="calc-output-panel shadow-card" id="dashboardOutput">
+                    <h3>Your Custom Solar Dashboard</h3>
+                    <div class="dashboard-grid">
+                        <div class="dash-card">
+                            <i class="fas fa-solar-panel"></i>
+                            <div class="dash-label">Recommended System</div>
+                            <div class="dash-val" id="outSysSize">6.5 kW</div>
+                        </div>
+                        <div class="dash-card">
+                            <i class="fas fa-wallet"></i>
+                            <div class="dash-label">Monthly Savings</div>
+                            <div class="dash-val text-green" id="outMoSavings">$135</div>
+                        </div>
+                        <div class="dash-card">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="dash-label">Annual Savings</div>
+                            <div class="dash-val text-green" id="outYrSavings">$1,620</div>
+                        </div>
+                        <div class="dash-card">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="dash-label">10-Year Savings</div>
+                            <div class="dash-val text-green" id="out10YrSavings">$16,200</div>
+                        </div>
+                        <div class="dash-card">
+                            <i class="fas fa-stopwatch"></i>
+                            <div class="dash-label">Payback Period</div>
+                            <div class="dash-val" id="outPayback">5.2 Years</div>
+                        </div>
+                    </div>
+                    <div class="sys-rec">
+                        <strong>AI Recommendation:</strong> Based on your profile, we recommend a <span id="recInverter">String Inverter</span> setup with <span id="recPanels">High-Efficiency Monocrystalline</span> panels.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upgrade 6: Live ROI Visualization -->
+            <div class="roi-visualization shadow-card mt-40">
+                <h3>20-Year ROI Projection</h3>
+                <div class="roi-chart-container">
+                    <div class="roi-bars" id="roiChart">
+                        <!-- Bars injected by JS -->
+                    </div>
+                    <div class="roi-legend">
+                        <span><span class="legend-box cost"></span> System Cost</span>
+                        <span><span class="legend-box savings"></span> Cumulative Savings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade 2: System Comparison Center -->
+    <section class="system-comparison section">
+        <div class="container">
+            <div class="section-title">
+                <h2>System Comparison Center</h2>
+                <p>Which solar architecture is right for you?</p>
+            </div>
+            <div class="comparison-grid">
+                <div class="comp-card">
+                    <div class="comp-header bg-blue">
+                        <h3>On-Grid</h3>
+                    </div>
+                    <div class="comp-body">
+                        <p><strong>Best For:</strong> Max ROI & Net Metering</p>
+                        <p><strong>Cost Level:</strong> $$</p>
+                        <p><strong>Batteries:</strong> No</p>
+                        <p><strong>Reliability:</strong> Grid-Dependent</p>
+                        <ul class="check-list">
+                            <li><i class="fas fa-check"></i> Lowest upfront cost</li>
+                            <li><i class="fas fa-check"></i> Fastest payback</li>
+                            <li><i class="fas fa-times text-red"></i> No power during outages</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="comp-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="comp-header bg-yellow">
+                        <h3>Hybrid</h3>
+                    </div>
+                    <div class="comp-body">
+                        <p><strong>Best For:</strong> Savings + Backup</p>
+                        <p><strong>Cost Level:</strong> $$$</p>
+                        <p><strong>Batteries:</strong> Yes</p>
+                        <p><strong>Reliability:</strong> High</p>
+                        <ul class="check-list">
+                            <li><i class="fas fa-check"></i> Power during grid outages</li>
+                            <li><i class="fas fa-check"></i> Use stored energy at night</li>
+                            <li><i class="fas fa-check"></i> Still benefits from net metering</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-header bg-green">
+                        <h3>Off-Grid</h3>
+                    </div>
+                    <div class="comp-body">
+                        <p><strong>Best For:</strong> Remote Locations</p>
+                        <p><strong>Cost Level:</strong> $$$$</p>
+                        <p><strong>Batteries:</strong> Heavy Requirement</p>
+                        <p><strong>Reliability:</strong> Self-Reliant</p>
+                        <ul class="check-list">
+                            <li><i class="fas fa-check"></i> Complete energy independence</li>
+                            <li><i class="fas fa-check"></i> No utility bills ever</li>
+                            <li><i class="fas fa-exclamation-triangle text-yellow"></i> Requires larger investment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solar Packages (Cards) -->
+    <section class="packages section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pre-Engineered Solar Packages</h2>
+                <p>Turnkey solutions tailored for different energy demands.</p>
+            </div>
+            <div class="packages-grid">
+                <div class="pkg-card shadow-card">
+                    <h3>Basic</h3>
+                    <div class="pkg-capacity">5 kW</div>
+                    <p class="pkg-desc">Ideal for small homes (1-2 bedrooms) with basic appliances.</p>
+                    <ul>
+                        <li><i class="fas fa-solar-panel"></i> 12 Tier-1 Panels</li>
+                        <li><i class="fas fa-bolt"></i> 5kW String Inverter</li>
+                        <li><i class="fas fa-shield-alt"></i> 10-Year Warranty</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline w-100 mt-20">Get Quote</a>
+                </div>
+                <div class="pkg-card shadow-card popular-pkg">
+                    <div class="popular-badge">Recommended</div>
+                    <h3>Standard</h3>
+                    <div class="pkg-capacity">10 kW</div>
+                    <p class="pkg-desc">Perfect for average homes with ACs and moderate usage.</p>
+                    <ul>
+                        <li><i class="fas fa-solar-panel"></i> 24 Tier-1 Panels</li>
+                        <li><i class="fas fa-bolt"></i> 10kW Hybrid Inverter</li>
+                        <li><i class="fas fa-battery-full"></i> 5kWh Battery Ready</li>
+                        <li><i class="fas fa-shield-alt"></i> 15-Year Warranty</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary w-100 mt-20">Get Quote</a>
+                </div>
+                <div class="pkg-card shadow-card">
+                    <h3>Premium</h3>
+                    <div class="pkg-capacity">15+ kW</div>
+                    <p class="pkg-desc">For large homes, EVs, and complete energy independence.</p>
+                    <ul>
+                        <li><i class="fas fa-solar-panel"></i> 36+ High-Eff Panels</li>
+                        <li><i class="fas fa-microchip"></i> Microinverters</li>
+                        <li><i class="fas fa-battery-full"></i> 10kWh Battery Backup</li>
+                        <li><i class="fas fa-shield-alt"></i> 25-Year Warranty</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline w-100 mt-20">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade 8: Project Impact Section -->
+    <section class="impact section section-dark">
+        <div class="container text-center">
+            <h2 style="margin-bottom: 40px; font-size: 2.5rem;">Our Environmental Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <i class="fas fa-solar-panel"></i>
+                    <h3 class="counter" data-target="15000">0</h3>
+                    <p>kW Capacity Installed</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-cloud-sun"></i>
+                    <h3 class="counter" data-target="22500">0</h3>
+                    <p>Tons CO₂ Reduced</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-tree"></i>
+                    <h3 class="counter" data-target="105000">0</h3>
+                    <p>Trees Equivalent Planted</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3 class="counter" data-target="45">0</h3>
+                    <p>GWh Energy Generated</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade 3: Net Metering Explainer -->
+    <section class="net-metering section">
+        <div class="container">
+            <div class="section-title">
+                <h2>How Net Metering Works</h2>
+                <p>Spin your meter backwards and get credited for excess energy.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="t-icon"><i class="fas fa-sun"></i></div>
+                    <div class="t-content">
+                        <h4>1. Generate</h4>
+                        <p>Your panels produce electricity during the day.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="t-icon"><i class="fas fa-home"></i></div>
+                    <div class="t-content">
+                        <h4>2. Consume</h4>
+                        <p>Your home uses the power it needs first.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="t-icon"><i class="fas fa-arrow-right"></i></div>
+                    <div class="t-content">
+                        <h4>3. Export</h4>
+                        <p>Excess power is sent back to the grid automatically.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="t-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <div class="t-content">
+                        <h4>4. Credit</h4>
+                        <p>The utility company credits your account, lowering your bill.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before vs After Visual -->
+    <section class="before-after section bg-light">
+        <div class="container text-center">
+            <div class="section-title">
+                <h2>The Solar Difference</h2>
+                <p>See what happens to your electricity bill after going solar.</p>
+            </div>
+            <div class="ba-container shadow-card">
+                <div class="ba-side before">
+                    <h3>Before Solar</h3>
+                    <div class="bill-amount text-red">$250 / mo</div>
+                    <p>Subject to annual utility rate hikes (avg 4% per year).</p>
+                </div>
+                <div class="ba-vs">VS</div>
+                <div class="ba-side after">
+                    <h3>After Solar</h3>
+                    <div class="bill-amount text-green">$15 / mo</div>
+                    <p>Fixed low cost. You only pay the basic grid connection fee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade 5: Myths vs Facts -->
+    <section class="myths-facts section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Solar Myths vs Facts</h2>
+                <p>Get the truth about going solar.</p>
+            </div>
+            <div class="mf-grid">
+                <div class="mf-card shadow-sm">
+                    <div class="myth"><i class="fas fa-times-circle text-red"></i> Myth: Solar doesn't work when it's cloudy.</div>
+                    <div class="fact"><i class="fas fa-check-circle text-green"></i> Fact: Panels still produce 10-25% of their capacity on cloudy days.</div>
+                </div>
+                <div class="mf-card shadow-sm">
+                    <div class="myth"><i class="fas fa-times-circle text-red"></i> Myth: Solar is too expensive.</div>
+                    <div class="fact"><i class="fas fa-check-circle text-green"></i> Fact: With financing, you can go solar for $0 down and pay less than your current bill.</div>
+                </div>
+                <div class="mf-card shadow-sm">
+                    <div class="myth"><i class="fas fa-times-circle text-red"></i> Myth: Maintenance is difficult.</div>
+                    <div class="fact"><i class="fas fa-check-circle text-green"></i> Fact: Systems have no moving parts. Occasional rain usually washes them clean enough.</div>
+                </div>
+                <div class="mf-card shadow-sm">
+                    <div class="myth"><i class="fas fa-times-circle text-red"></i> Myth: It will damage my roof.</div>
+                    <div class="fact"><i class="fas fa-check-circle text-green"></i> Fact: Proper installation actually protects the roof underneath from weather.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade 7: Commercial Savings Section -->
+    <section id="commercial" class="commercial section section-dark">
+        <div class="container">
+            <div class="section-title">
+                <h2>Commercial & Industrial Solutions</h2>
+                <p>Turn your idle roof space into a profit center. Maximize ROI and meet ESG goals.</p>
+            </div>
+            <div class="comm-grid">
+                <div class="comm-card">
+                    <i class="fas fa-industry comm-icon"></i>
+                    <h3>Factories</h3>
+                    <p>Offset heavy machinery loads. ROI typically under 4 years due to high consumption.</p>
+                </div>
+                <div class="comm-card">
+                    <i class="fas fa-warehouse comm-icon"></i>
+                    <h3>Warehouses</h3>
+                    <p>Massive roof space means massive generation potential. Export excess for profit.</p>
+                </div>
+                <div class="comm-card">
+                    <i class="fas fa-hospital comm-icon"></i>
+                    <h3>Hospitals</h3>
+                    <p>Ensure critical backup power while slashing operational OPEX significantly.</p>
+                </div>
+                <div class="comm-card">
+                    <i class="fas fa-building comm-icon"></i>
+                    <h3>Offices</h3>
+                    <p>Power your daytime operations directly from the sun when rates are highest.</p>
+                </div>
+            </div>
+            <div class="text-center mt-40">
+                <a href="#contact" class="btn btn-primary">Request Commercial Audit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade 9: Financing Simulator -->
+    <section class="financing section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Flexible Financing Options</h2>
+                <p>Zero upfront cost options available. Stop paying rent to the utility company.</p>
+            </div>
+            <div class="fin-sim-container shadow-card">
+                <div class="fin-inputs">
+                    <h3>Simulate Your Payment</h3>
+                    <div class="form-group">
+                        <label>System Cost Estimate ($)</label>
+                        <input type="number" id="finCost" value="15000">
+                    </div>
+                    <div class="form-group">
+                        <label>Financing Type</label>
+                        <select id="finType">
+                            <option value="cash">Cash Purchase (Highest ROI)</option>
+                            <option value="loan10">10-Year Solar Loan ($0 Down)</option>
+                            <option value="loan20">20-Year Solar Loan ($0 Down)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fin-outputs">
+                    <div class="fin-result" id="finCashResult">
+                        <h4>Out of Pocket Today</h4>
+                        <div class="amount" id="outPocket">$15,000</div>
+                        <p class="text-muted">Payback in ~5 years. 100% of savings are yours immediately.</p>
+                    </div>
+                    <div class="fin-result" id="finLoanResult" style="display:none;">
+                        <h4>Estimated Monthly Payment</h4>
+                        <div class="amount text-green" id="outMoPayment">$165 / mo</div>
+                        <p class="text-muted">Replace your utility bill with a fixed solar payment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="gallery section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Premium Installations</h2>
+                <p>We take pride in clean, aesthetically pleasing solar arrays.</p>
+            </div>
+            <div class="gallery-grid">
+                <!-- Placeholders for gallery -->
+                <div class="gal-item" style="background-image: url('https://images.unsplash.com/photo-1509391366360-1e97b524c08b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gal-overlay">Residential - 8kW</div>
+                </div>
+                <div class="gal-item" style="background-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gal-overlay">Commercial - 100kW</div>
+                </div>
+                <div class="gal-item" style="background-image: url('https://images.unsplash.com/photo-1588508065123-287b28e013da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gal-overlay">Industrial - 500kW</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Lead Gen Form -->
+    <section id="contact" class="contact section section-dark">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Get Your Free Solar Assessment</h2>
+                    <p>Our engineers will analyze your roof, historical energy usage, and local incentives to build a custom savings report.</p>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-check text-yellow"></i> No commitment required</li>
+                        <li><i class="fas fa-check text-yellow"></i> 100% free engineering design</li>
+                        <li><i class="fas fa-check text-yellow"></i> Transparent pricing & ROI</li>
+                    </ul>
+                </div>
+                <div class="contact-form-container shadow-card bg-light">
+                    <form id="leadForm">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="phone" required style="width: 100%;">
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" required placeholder="e.g. Phoenix">
+                        </div>
+                        <div class="form-group">
+                            <label>Property Type</label>
+                            <select required>
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Avg Monthly Bill ($)</label>
+                            <input type="number" required placeholder="150">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Request Assessment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal Overlay (Demo Only) -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content text-center">
+            <i class="fas fa-check-circle text-green" style="font-size: 4rem; margin-bottom: 20px;"></i>
+            <h3>Request Received!</h3>
+            <p><strong>This is a demo version.</strong> In the customized production version, consultation requests, assessments, and quotations will be processed automatically.</p>
+            <button class="btn btn-primary" id="closeSuccessModal" style="margin-top: 20px;">Close</button>
+        </div>
+    </div>
+
+    <!-- Phone Error Modal Overlay -->
+    <div class="modal-overlay" id="phoneErrorModal">
+        <div class="modal-content text-center">
+            <i class="fas fa-exclamation-triangle text-red" style="font-size: 4rem; margin-bottom: 20px;"></i>
+            <h3>Invalid Phone Number</h3>
+            <p>Please enter a valid 10-digit phone number (e.g. 300 1234567).</p>
+            <button class="btn btn-outline" id="closePhoneErrorModal" style="margin-top: 20px;">Try Again</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center" style="padding: 40px 20px; color: var(--text-muted);">
+            <div class="logo" style="justify-content: center; margin-bottom: 20px; color: var(--text-dark);">
+                <i class="fas fa-solar-panel" style="color: var(--primary-blue);"></i>
+                <div style="color: var(--primary-blue);">Premium<span style="color: var(--accent-yellow);">Solar</span></div>
+            </div>
+            <p>&copy; 2026 Premium Solar. All rights reserved.</p>
+            <p>This is a demo conversion-focused lead generation platform.</p>
+        </div>
+    </footer>
+
+    <!-- intl-tel-input JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
