@@ -219,14 +219,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePhoneErrorModal = document.getElementById('closePhoneErrorModal');
 
     // Phone Number Verification Setup
-    const phoneInput = document.querySelector("#phone");
-    let iti;
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    let itiList = [];
     
     if (window.intlTelInput) {
-        iti = window.intlTelInput(phoneInput, {
-            initialCountry: "pk",
-            separateDialCode: true,
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        phoneInputs.forEach(input => {
+            const instance = window.intlTelInput(input, {
+                initialCountry: "pk",
+                separateDialCode: true,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+            });
+            itiList.push({ input: input, instance: instance });
         });
     }
 
@@ -251,18 +254,27 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault(); // Prevent page reload
         
         // Validate Phone Number
-        if (iti) {
-            if (!iti.isValidNumber()) {
-                phoneErrorModal.classList.add('active');
-                return; // Stop form submission
-            }
-        } else if (phoneInput) {
+        let allValid = true;
+        
+        if (itiList.length > 0) {
+            itiList.forEach(item => {
+                if (!item.instance.isValidNumber()) {
+                    allValid = false;
+                }
+            });
+        } else {
             // Fallback if library failed to load
-            const val = phoneInput.value.replace(/\D/g, '');
-            if (val.length !== 10) {
-                phoneErrorModal.classList.add('active');
-                return; // Stop form submission
-            }
+            phoneInputs.forEach(input => {
+                const val = input.value.replace(/\D/g, '');
+                if (val.length !== 10) {
+                    allValid = false;
+                }
+            });
+        }
+
+        if (!allValid) {
+            phoneErrorModal.classList.add('active');
+            return; // Stop form submission
         }
 
         successModal.classList.add('active');

@@ -259,6 +259,7 @@ header { position: absolute; top: 40px; left: 0; width: 100%; padding: 20px 0; z
 .contact-form-container { padding: 40px; }
 .contact-form-container .form-group label { color: var(--text-dark); }
 .iti { width: 100%; } /* Ensure phone input takes full width */
+.iti__tel-input { padding-left: 90px !important; } /* Fix padding override */
 .error-border { border-color: var(--error-red) !important; box-shadow: 0 0 0 1px var(--error-red); }
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
